@@ -1,78 +1,157 @@
+/* Fundo suave */
 body {
-    height: 100vh;
+    background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(27, 27, 27);
+    padding: 20px;
 }
 
-.forecast-box {
-    display: flex;
-    gap: 15px;
+/* Card glassmorphism */
+.card {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+}
+
+/* Input + botão */
+.search {
+    gap: 10px;
+}
+
+.search input {
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    height: 45px;
+    color: #333;
+    font-size: 17px;
+    border-radius: 12px;
+}
+
+.search input::placeholder {
+    color: #333;
+}
+
+.search button {
+    width: 50px;
+    border: none;
+    background: #ffffff90;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.search button:hover {
+    background: #fff;
+}
+
+/* Ícone principal */
+.img-prin {
+    width: 150px;
+    margin: auto;
+    display: block;
+}
+
+/* Temperatura */
+#temp {
+    font-size: 60px;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: bold;
+    color: white;
+}
+
+/* Nome da cidade */
+#city {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+}
+
+/* Humidade / vento */
+.cor {
+    color: white;
+}
+
+.info {
     margin-top: 20px;
 }
 
-.forecast-card {
-    background: #ffffff20;
-    padding: 10px;
-    width: 80px;
-    text-align: center;
-    border-radius: 8px;
+.names h4 {
+    color: #fff;
+    font-weight: 300;
 }
+
+/* Previsão */
+.forecast-box {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.forecast-box::-webkit-scrollbar {
+    height: 6px;
+}
+
+.forecast-box::-webkit-scrollbar-thumb {
+    background: #ffffff70;
+    border-radius: 10px;
+}
+
+.forecast-card {
+    min-width: 90px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 10px 5px;
+    text-align: center;
+}
+
+.forecast-card p {
+    font-size: 15px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: white;
+}
+
 .forecast-card img {
     width: 45px;
 }
 
-
-.img-prin {
-    width: 40%;
-
-}
-
-.names h4 {
+.forecast-card span {
+    font-size: 18px;
+    font-weight: bold;
     color: white;
 }
 
+/* Erro */
+#error p {
+    background: rgba(255, 60, 60, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    border-left: 4px solid rgb(255, 40, 40);
+}
 
+/* Esconder */
 .hide {
-    display: none;
-}
-.card {
-    width: 28rem;
-    background: linear-gradient(135deg, #00feba, #5b548a);
-    border-radius: 30px;
-    
+    display: none !important;
 }
 
-.card .card-body .search button {
-    border-radius: 70px;
-    background: white;
-    border: none;
-    height: 55px;
-
-}
-
-.card .card-body .search input {
-    border-radius: 50px;
-    width: 20rem;
-}
-
-.card .card-body .search button img {
-    width: 50%;
-   
-}
-
-.main-content img {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.main-content h1, h2 {
-    text-align: center;
-    color: white;
-}
-
-.cor {
-    color: white;
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+    #temp {
+        font-size: 45px;
+    }
+    #city {
+        font-size: 22px;
+    }
+    .img-prin {
+        width: 120px;
+    }
 }
